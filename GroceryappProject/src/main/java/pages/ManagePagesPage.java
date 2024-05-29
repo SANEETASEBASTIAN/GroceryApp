@@ -6,6 +6,8 @@ package pages;
 	import org.openqa.selenium.support.FindBy;
 	import org.openqa.selenium.support.PageFactory;
 
+import utilities.WaitUtility;
+
 	public class ManagePagesPage {
 		WebDriver driver;
 		public ManagePagesPage(WebDriver driver)
@@ -17,10 +19,10 @@ package pages;
 		@FindBy(xpath="//p[text()='Manage Pages']")WebElement managepages;
 		@FindBy(xpath="//a[@class='btn btn-rounded btn-danger']")WebElement newfield;
 		@FindBy(xpath="//input[@placeholder='Enter the Title']")WebElement entertitle;
-		@FindBy(xpath="//div[@contenteditable='true']")WebElement description;
+		@FindBy(xpath="//div[@contenteditable='true']")WebElement descriptions;
 		@FindBy(xpath="//input[@placeholder='Enter Page Name']")WebElement enterpagename;
-		@FindBy(xpath="//input[@id='main_img']")WebElement choosefile;
-		@FindBy(xpath="//button[@name='create']")WebElement save;
+		@FindBy(xpath="//input[@name='main_img']")WebElement choosefile;
+		@FindBy(xpath="//button[text()='Save']")WebElement save;
 		@FindBy(xpath="//div[@class='alert alert-success alert-dismissible']")WebElement alert;
 		public void clickingManageContent()
 		{
@@ -34,24 +36,26 @@ package pages;
 		{
 			newfield.click();
 		}
-		public void enteringTitle()
+		public void enteringTitle(String title)
 		{
-			entertitle.sendKeys("Saneeta");
+			entertitle.sendKeys(title);
 		}
-		public void enteringDescription()
+		public void enteringDescription(String description)
 		{
-			description.sendKeys("Hi saneeta");
+			descriptions.sendKeys(description);
 		}
-		public void enteringPageName()
+		public void enteringPageName(String pagename)
 		{
-			enterpagename.sendKeys("obsqura");
+			enterpagename.sendKeys(pagename);
 		}
-		public void choosingFile()
+		public void choosingFile(String file)
 		{
-			choosefile.sendKeys("F:\\PICT\\inshot\\InShot_20200318_150824353.jpg");
+			choosefile.sendKeys(file);
 		}
 		public void clickingSave()
 		{
+			WaitUtility wait=new WaitUtility();
+			wait.waitForElementClick(driver, save);
 			save.click();
 		}
 		

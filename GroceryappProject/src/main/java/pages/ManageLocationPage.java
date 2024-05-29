@@ -9,6 +9,8 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import utilities.PageUtility;
+
 public class ManageLocationPage {
 	WebDriver driver;
 
@@ -16,7 +18,7 @@ public class ManageLocationPage {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 
-	}
+	}   
 
 	@FindBy(xpath = "//p[text()='Manage Location']")
 	WebElement manageLocation;
@@ -30,7 +32,7 @@ public class ManageLocationPage {
 	WebElement addLocationTofield;
 	@FindBy(xpath = "//input[@placeholder='Enter the Delivery Charge']")
 	WebElement addDeliveryCharge;
-	@FindBy(xpath="//button[@name='create']")
+	@FindBy(xpath="//button[@type='submit']")
 	WebElement buttonSave;
 	@FindBy(xpath = "//div[@class='alert alert-success alert-dismissible']")
 	WebElement alertMessageSuccess;
@@ -45,29 +47,35 @@ public class ManageLocationPage {
 		addNewLocation.click();
 	}
 
-	public void addCountryNameIntheField() {
+	public void addCountryNameIntheField(String text) {
 
-		Select select = new Select(addCountryNameFromtheDropDown);
-		select.selectByVisibleText("United Kingdom");
+		//Select select = new Select(addCountryNameFromtheDropDown);
+		//select.selectByVisibleText(text);
+		PageUtility pageutility=new PageUtility();
+		pageutility.selection(addCountryNameFromtheDropDown,text);
 	}
 
-	public void addStateNameIntheField() {
+	public void addStateNameIntheField(String state) {
 
-		Select select = new Select(addStateFromtheList);
-		select.selectByIndex(5);
+		//Select select = new Select(addStateFromtheList);
+		//select.selectByVisibleText(state);
+		PageUtility pageutility=new PageUtility();
+		pageutility.selection(addStateFromtheList,state);
 	}
 
-	public void addLocationToTheField() {
-		addLocationTofield.sendKeys("Adimali township houseno234");
+	public void addLocationToTheField(String location) {
+		addLocationTofield.sendKeys(location);
 	}
 
-	public void addDeliveryChargeToTheField() {
-		addDeliveryCharge.sendKeys("100");
+	public void addDeliveryChargeToTheField(String deliverycharge) {
+		addDeliveryCharge.sendKeys(deliverycharge);
 	}
 
 	public void clickingSavebutton()
 	{
 		WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(10));
+
+
 		buttonSave.click();
 	}
 

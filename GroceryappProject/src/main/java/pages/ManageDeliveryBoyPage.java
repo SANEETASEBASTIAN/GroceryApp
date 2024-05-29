@@ -18,7 +18,8 @@ public class ManageDeliveryBoyPage {
 	@FindBy(xpath = "//a[@href='javascript:void(0)']")
 	WebElement searchElementFromDeliveryBoy;
 	@FindBy(xpath = "//input[@placeholder='Name']")
-	WebElement searchElementByEnteringName;	@FindBy(xpath = "//table[@class='table table-bordered table-hover table-sm']")
+	WebElement searchElementByEnteringName;	
+	@FindBy(xpath = "//table[@class='table table-bordered table-hover table-sm']")
 	WebElement tableDisplayed;
 	@FindBy(xpath = "//button[@name='Search']")
 	WebElement clickingSearchButton;
@@ -34,8 +35,8 @@ public class ManageDeliveryBoyPage {
 
 	}
 
-	public void searchingElementByAddingName() {
-		searchElementByEnteringName.sendKeys("test");
+	public void searchingElementByAddingName(String name) {
+		searchElementByEnteringName.sendKeys(name);
 
 	}
 

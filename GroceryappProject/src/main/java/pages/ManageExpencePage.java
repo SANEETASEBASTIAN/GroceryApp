@@ -40,8 +40,8 @@ public class ManageExpencePage {
 		addNew.click();
 	}
 
-	public void EnterTitle() {
-		addTitle.sendKeys("HelloNewExpence123");
+	public void EnterTitle(String title) {
+		addTitle.sendKeys(title);
 	}
 
 	public void clickingSaveButton() {

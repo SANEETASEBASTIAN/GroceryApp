@@ -30,11 +30,11 @@ public class ManageSliderPage {
 	public void manageSliderADDNew() {
 		manageSliderNew.click();
 	}
-	public void manageSliderADDImage() {
-		manageSliderImage.sendKeys("F:\\PICT\\inshot\\InShot_20200318_150824353.jpg");
+	public void manageSliderADDImage(String file) {
+		manageSliderImage.sendKeys(file);
 	}
-	public void manageSliderAddLink() {
-		manageSliderLink.sendKeys("https://groceryapp.uniqassosiates.com/admin/Slider/add");
+	public void manageSliderAddLink(String link) {
+		manageSliderLink.sendKeys(link);
 	}
 	public void manageSliderAddSaveButton() {
 		save.click();

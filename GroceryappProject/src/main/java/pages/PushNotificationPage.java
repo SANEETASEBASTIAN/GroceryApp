@@ -33,8 +33,8 @@ public class PushNotificationPage {
 		enteringTitle.sendKeys(title);
 	}
 
-	public void addingDescriptioninField(String descrption) {
-		AddDescription.sendKeys(descrption);
+	public void addingDescriptioninField(String description) {
+		AddDescription.sendKeys(description);
 	}
 
 	public void clickingSendButton() {

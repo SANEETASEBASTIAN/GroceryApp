@@ -6,6 +6,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
+import utilities.PageUtility;
+
 public class ManageProductSerachPage {
 
 WebDriver driver;
@@ -17,7 +19,7 @@ public  ManageProductSerachPage(WebDriver driver) {
 
 @FindBy(xpath = "//p[text()='Manage Product']")
 WebElement manageProduct;
-@FindBy(xpath ="//a[@href='javascript:void(0)']")
+@FindBy(xpath ="//a[@href='javascript:void(0)']") 
 WebElement manageProductSearch;
 @FindBy(xpath = "//input[@placeholder='Title']")
 WebElement manageProductSearchTitle;
@@ -37,19 +39,23 @@ public void manageProuct() {
 public void managePrSerach() {
 	manageProductSearch.click();
 }
-public void manageProuctSearchTitle() {
-	manageProductSearchTitle.sendKeys("Biriyani");
+public void manageProuctSearchTitle(String title) {
+	manageProductSearchTitle.sendKeys(title);
 }
-public void manageProuctSearchProductCode() {
-	manageProductSearchProductCode.sendKeys("1");
+public void manageProuctSearchProductCode(String code) {
+	manageProductSearchProductCode.sendKeys(code);
 }
-public void manageProuctSearchCategory() {
-	Select select=new Select(manageProductSearchCategory);
-	select.selectByIndex(5);
+public void manageProuctSearchCategory(String category) {
+	//Select select=new Select(manageProductSearchCategory);
+	//select.selectByVisibleText(category);
+	PageUtility pageutility=new PageUtility();
+	pageutility.selection(manageProductSearchCategory,category);
 }
-public void manageProductSearchSubCategory(){
-	Select select=new Select(manageProductSearchCategory);
-	select.selectByIndex(0);
+public void manageProductSearchSubCategory(String subcategory){
+	//Select select=new Select(manageProductSearchCategory);
+	//select.selectByVisibleText(subcategory );
+	PageUtility pageutility=new PageUtility();
+	pageutility.selection(manageProductSearchSubCategory,subcategory);
 }
 public void SearchElement() {
 	manageProductSearchSave.click();

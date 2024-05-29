@@ -6,6 +6,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
+import utilities.PageUtility;
+
 public class MobileSliderPage {
 	WebDriver driver;
 
@@ -33,12 +35,14 @@ public class MobileSliderPage {
 	public void mobileSliderADDNew() {
 		moblieSliderNew.click();
 	}
-	public void moblieSliderCategory() {
-		Select select=new Select(moblieSliderCategory);
-		select.selectByIndex(5);
+	public void moblieSliderCategory(String category) {
+		//Select select=new Select(moblieSliderCategory);
+		//select.selectByVisibleText(category);
+		PageUtility pageutility=new PageUtility();
+		pageutility.selection(moblieSliderCategory,category);
 	}
-	public void moblieSliderImage() {
-		moblieSliderImage.sendKeys("F:\\PICT\\inshot\\InShot_20200318_150824353.jpg");
+	public void moblieSliderImage(String file) {
+		moblieSliderImage.sendKeys(file);
 	}
 	public void manageSliderAddSaveButton() {
 		manageSliderSave.click();

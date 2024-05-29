@@ -17,7 +17,7 @@ public class ManageContentPage {
 	WebElement manageContent;
 	@FindBy(xpath = "//p[text()='Manage News']")
 	WebElement manageNews;
-	@FindBy(xpath ="//a[@href='https://groceryapp.uniqassosiates.com/admin/news/add']")
+	@FindBy(xpath ="//a[@onclick='click_button(1)']")
 	WebElement manageNewsAddNew;
 	@FindBy(xpath = "//textarea[@placeholder='Enter the news']")
 	WebElement manageNewsAddNewNews;
@@ -38,8 +38,8 @@ public class ManageContentPage {
 		manageNewsAddNew.click();
 	}
 
-	public void manageNewsAddNewNews() {
-		manageNewsAddNewNews.sendKeys("LockDown Alert");
+	public void manageNewsAddNewNews(String newElement) {
+		manageNewsAddNewNews.sendKeys(newElement);
 	}
 
 	public void saveButton() {
