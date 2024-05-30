@@ -37,7 +37,7 @@ public class LoginTest extends Base {
 		loginPage.enterPasswordOnPasswordField(passwordValue);
 		loginPage.clickOnSignInButton();
 		boolean isHomePageLoaded = loginPage.dashBoardCheck();
-		Assert.assertTrue(isHomePageLoaded, "unable to login the application");
+		Assert.assertTrue(isHomePageLoaded,Constants.ERRORMESSAGEFORUNABLETOLOGIN);
 
 	}
 
@@ -50,7 +50,7 @@ public class LoginTest extends Base {
 		loginPage.enterPasswordOnPasswordField(passwordValue);
 		loginPage.clickOnSignInButton();
 		boolean invalidData = loginPage.alertdisplayed();
-		Assert.assertTrue(invalidData, "able to login the application");
+		Assert.assertTrue(invalidData,Constants.ERRORMESSAGEFORABLETOLOGIN);
 
 	}
 
@@ -63,7 +63,7 @@ public class LoginTest extends Base {
 		loginPage.enterPasswordOnPasswordField(passwordValue);
 		loginPage.clickOnSignInButton();
 		boolean invalidData = loginPage.alertdisplayed();
-		Assert.assertTrue(invalidData, "able to login the application");
+		Assert.assertTrue(invalidData,Constants.ERRORMESSAGEFORABLETOLOGIN);
 
 	}
 
@@ -77,7 +77,7 @@ public class LoginTest extends Base {
 		loginPage.enterPasswordOnPasswordField(passwordValue);
 		loginPage.clickOnSignInButton();
 		boolean invalidData = loginPage.alertdisplayed();
-		Assert.assertTrue(invalidData, "able to login the application");
+		Assert.assertTrue(invalidData, Constants.ERRORMESSAGEFORABLETOLOGIN);
 
 	}
 

@@ -21,14 +21,14 @@ public class PageUtility {
 		select.selectByVisibleText(elementtext);
 
 	}
-	public void selection2(WebElement element1, String elementtext1) {
-		Select select = new Select(element1);
+	public void selectionindex(WebElement elementindex) {
+		Select select = new Select(elementindex);
 		select.selectByIndex(0);
 
 	}
-	public void selection3(WebElement element3, String elementtext3) {
-		Select select = new Select(element3);
-		select.selectByValue(elementtext3);
+	public void selectionvalue(WebElement elementvalue, String elementtextvalue) {
+		Select select = new Select(elementvalue);
+		select.selectByValue(elementtextvalue);
 
 	}
 

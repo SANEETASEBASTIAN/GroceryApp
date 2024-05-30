@@ -49,16 +49,13 @@ public class ManageLocationPage {
 
 	public void addCountryNameIntheField(String text) {
 
-		//Select select = new Select(addCountryNameFromtheDropDown);
-		//select.selectByVisibleText(text);
+		
 		PageUtility pageutility=new PageUtility();
 		pageutility.selection(addCountryNameFromtheDropDown,text);
 	}
 
 	public void addStateNameIntheField(String state) {
 
-		//Select select = new Select(addStateFromtheList);
-		//select.selectByVisibleText(state);
 		PageUtility pageutility=new PageUtility();
 		pageutility.selection(addStateFromtheList,state);
 	}

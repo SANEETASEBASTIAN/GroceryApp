@@ -6,6 +6,7 @@ import org.testng.Assert;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
+import constants.Constants;
 import pages.LoginPage;
 import pages.ManageDeliveryBoyPage;
 import utilities.ExcelUtility;
@@ -22,7 +23,7 @@ public class ManageDeliveryBoy extends Base {
 		loginPage.enterPasswordOnPasswordField(passwordValue);
 		loginPage.clickOnSignInButton();
 		boolean isHomePageLoaded = loginPage.dashBoardCheck();
-		Assert.assertTrue(isHomePageLoaded, "unable to login the application");
+		Assert.assertTrue(isHomePageLoaded,Constants.ERRORMESSAGEFORUNABLETOLOGIN);
 
 		ManageDeliveryBoyPage manageDeliveryBoy = new ManageDeliveryBoyPage(driver);
 		String name = ExcelUtility.getStringData(1, 0, "ManageDelivery");

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite thread-count="2" parallel="classes" name="Failed suite [Parallel Class Testing]" guice-stage="DEVELOPMENT">
+  <parameter name="browser" value="Chrome"/>
+  <listeners>
+    <listener class-name="utilities.ExtendReportUtility"/>
+  </listeners>
+  <test thread-count="2" parallel="classes" name="Test(failed)">
+    <classes>
+      <class name="testscript.LoginTest">
+        <methods>
+          <include name="initializeMethod"/>
+          <include name="verifyUserIsAbleToLoginUsinginValidUsernameandInvalidPassword"/>
+          <include name="verifyUserIsAbleToLoginUsinginValidUsernameandvalidPassword"/>
+          <include name="verifyUserIsAbleToLoginUsingValidUsernameandInvalidPassword"/>
+          <include name="afterMethod"/>
+          <include name="verifyUserIsAbleToLoginUsingValidCredentials"/>
+        </methods>
+      </class> <!-- testscript.LoginTest -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Parallel Class Testing] -->

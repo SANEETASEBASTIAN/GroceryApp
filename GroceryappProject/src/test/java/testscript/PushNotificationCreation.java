@@ -5,6 +5,7 @@ import java.io.IOException;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import constants.Constants;
 import pages.LoginPage;
 import pages.PushNotificationPage;
 import utilities.ExcelUtility;
@@ -20,7 +21,7 @@ public class PushNotificationCreation extends Base {
 		loginPage.enterPasswordOnPasswordField(passwordValue);
 		loginPage.clickOnSignInButton();
 		boolean isHomePageLoaded = loginPage.dashBoardCheck();
-		Assert.assertTrue(isHomePageLoaded, "able to login the application");
+		Assert.assertTrue(isHomePageLoaded,Constants.ERRORMESSAGEFORUNABLETOLOGIN);
 
 		
 		PushNotificationPage pushNotification = new PushNotificationPage(driver);

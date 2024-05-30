@@ -5,6 +5,7 @@ import java.io.IOException;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import constants.Constants;
 import pages.LoginPage;
 import pages.ManageContentPage;
 import utilities.ExcelUtility;
@@ -20,7 +21,7 @@ public class ManageContent extends Base {
 		loginPage.enterPasswordOnPasswordField(passwordValue);
 		loginPage.clickOnSignInButton();
 		boolean isHomePageLoaded = loginPage.dashBoardCheck();
-		Assert.assertTrue(isHomePageLoaded, "unable to login the application");
+		Assert.assertTrue(isHomePageLoaded,Constants.ERRORMESSAGEFORUNABLETOLOGIN);
 
 		ManageContentPage manageContent = new ManageContentPage(driver);
 		String newElement = ExcelUtility.getStringData(1, 0, "ManageContentAdd");

@@ -5,7 +5,7 @@
 
 	<listeners>
 
-		<listener class-name="utilities.ExtendReportUtility"></listener>
+		<listener class-name="generateReport.Listeners"></listener>
 
 	</listeners>
 

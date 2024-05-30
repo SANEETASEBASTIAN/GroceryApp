@@ -2,6 +2,8 @@ package testscript;
 
 import org.testng.annotations.Test;
 
+import constants.Constants;
+
 import java.io.IOException;
 
 import org.testng.Assert;
@@ -24,7 +26,7 @@ public class ManagePage  extends Base {
 			loginPage.enterPasswordOnPasswordField(passwordValue);
 			loginPage.clickOnSignInButton();
 			boolean isHomePageLoaded = loginPage.dashBoardCheck();
-			Assert.assertTrue(isHomePageLoaded, "unable to login the application");
+			Assert.assertTrue(isHomePageLoaded,Constants.ERRORMESSAGEFORUNABLETOLOGIN);
 			
 		  
 		  ManagePagesPage managepagespage= new ManagePagesPage(driver);

@@ -5,6 +5,7 @@ import java.io.IOException;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import constants.Constants;
 import pages.LoginPage;
 import pages.ManageExpencePage;
 import utilities.ExcelUtility;
@@ -20,7 +21,7 @@ public class ManageExpenceAdd extends Base {
 		loginPage.enterPasswordOnPasswordField(passwordValue);
 		loginPage.clickOnSignInButton();
 		boolean isHomePageLoaded = loginPage.dashBoardCheck();
-		Assert.assertTrue(isHomePageLoaded, "unable to login the application");
+		Assert.assertTrue(isHomePageLoaded,Constants.ERRORMESSAGEFORUNABLETOLOGIN);
 
 		ManageExpencePage manageExpencePage = new ManageExpencePage(driver);
 		String title = ExcelUtility.getStringData(1, 0,"ManageExpence");
